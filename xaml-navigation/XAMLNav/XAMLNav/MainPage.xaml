@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:XAMLNav"
+             mc:Ignorable="d" x:Class="XAMLNav.MainPage"
+             Title="Enter Notes">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Editor Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                Placeholder="Enter Note" Margin="10,10"
+                Text="{Binding NoteText}"
+                x:Name="theEditor"/>
+
+        <Button Text="Save" Grid.Row="1" Grid.Column="0"
+                Margin="10,0" Command="{Binding SaveNoteCommand}"
+                BackgroundColor="Green" TextColor="White"/>
+
+        <Button Text="Delete" Grid.Row="1" Grid.Column="1"
+                Margin="10,0" Command="{Binding EraseNoteCommand}"
+                BackgroundColor="Red" TextColor="White"/>
+        
+        <CollectionView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                  ItemsSource="{Binding Notes}"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedNote}"
+                  SelectionChangedCommand="{Binding NoteSelectedCommand}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10,10">
+                        <Frame>
+                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
+                        </Frame>                                                
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        
+    </Grid>
+</ContentPage>
