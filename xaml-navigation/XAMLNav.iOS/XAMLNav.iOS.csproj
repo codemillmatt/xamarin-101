@@ -110,6 +110,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\xamagon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,5 +131,8 @@
       <Project>{F4D8AA12-454C-4CF6-B1BB-69F07F08FF33}</Project>
       <Name>XAMLNav</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\xamagon.imageset\" />
   </ItemGroup>
 </Project>

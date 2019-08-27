@@ -16,25 +16,29 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="2.5*"/>
             <RowDefinition Height=".5*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Editor Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        <Image Source="xamagon" Grid.Row="0" Grid.Column="0"
+               Grid.ColumnSpan="2" BackgroundColor="PowderBlue"/>
+
+        <Editor Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                 Placeholder="Enter Note" Margin="10,10"
                 Text="{Binding NoteText}"
                 x:Name="theEditor"/>
 
-        <Button Text="Save" Grid.Row="1" Grid.Column="0"
+        <Button Text="Save" Grid.Row="2" Grid.Column="0"
                 Margin="10,0" Command="{Binding SaveNoteCommand}"
                 BackgroundColor="Green" TextColor="White"/>
 
-        <Button Text="Delete" Grid.Row="1" Grid.Column="1"
+        <Button Text="Delete" Grid.Row="2" Grid.Column="1"
                 Margin="10,0" Command="{Binding EraseNoteCommand}"
                 BackgroundColor="Red" TextColor="White"/>
         
-        <CollectionView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+        <CollectionView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"
                   ItemsSource="{Binding Notes}"
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedNote}"

@@ -5793,6 +5793,9 @@ namespace XAMLUI.Droid
 			// aapt resource value: 0x7F070075
 			public const int tooltip_frame_light = 2131165301;
 			
+			// aapt resource value: 0x7F070076
+			public const int xamagon = 2131165302;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

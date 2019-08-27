@@ -110,6 +110,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\xamagon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,5 +131,8 @@
       <Project>{7124F09C-10D7-49F9-B0AE-0A831EEC6E7A}</Project>
       <Name>XamlMvvm</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\xamagon.imageset\" />
   </ItemGroup>
 </Project>
