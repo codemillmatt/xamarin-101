@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 
-namespace XamlMvvm
+namespace CodedUIMvvm
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {

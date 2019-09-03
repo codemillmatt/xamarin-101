@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace XamlMvvm.iOS
+namespace CodedUIMvvm.iOS
 {
     public class Application
     {

@@ -5,6 +5,8 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XamlMvvm"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
     mc:Ignorable="d"
     x:Class="XamlMvvm.MainPage">
 
@@ -25,8 +27,7 @@
 
         <Editor Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                 Placeholder="Enter Note" Margin="10,10"
-                Text="{Binding NoteText}"
-                x:Name="theEditor"/>
+                Text="{Binding NoteText}"/>
 
         <Button Text="Save" Grid.Row="1" Grid.Column="0"
                 Margin="10,0" Command="{Binding SaveNoteCommand}"
@@ -42,11 +43,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10,10">
-                        <Frame>
-                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
+                        <Frame >
+                            <Label Text="{Binding Text}" VerticalTextAlignment="Center"/>
                         </Frame>
-                        
-                        <!--<BoxView Color="Gray" HeightRequest="1"/>-->
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
