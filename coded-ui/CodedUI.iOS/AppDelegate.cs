@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace XAMLUI.iOS
+namespace CodedUI.iOS
 {
     [Register(nameof(AppDelegate))]
     public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate

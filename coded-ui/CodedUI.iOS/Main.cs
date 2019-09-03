@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace XAMLUI.iOS
+namespace CodedUI.iOS
 {
     public class Application
     {

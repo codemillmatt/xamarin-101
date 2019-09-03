@@ -1,29 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="XAMLUI.MainPage">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    mc:Ignorable="d"
+    x:Class="XAMLUI.MainPage">
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2.5*"/>
-            <RowDefinition Height=".5*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <Editor Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                Placeholder="Enter Note" Margin="10,10"
-                x:Name="theEditor"/>
+        <Editor Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Placeholder="Enter Note"
+                Margin="10,10"
+                x:Name="noteEditor" />
 
-        <Button Text="Save" Grid.Row="1" Grid.Column="0"
-                Margin="10,0" Clicked="SaveButton_Clicked"
-                BackgroundColor="Green" TextColor="White"/>
-        <Button Text="Delete" Grid.Row="1" Grid.Column="1"
-                Margin="10,0" Clicked="DeleteButton_Clicked"
-                BackgroundColor="Red" TextColor="White"/>
+        <Button Text="Save"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="10,0"
+                Clicked="SaveButton_Clicked"
+                BackgroundColor="Green"
+                TextColor="White" />
 
-        <Label Text="Something cool" Grid.Row="2" Grid.Column="0"
-               Grid.ColumnSpan="2" FontSize="Large" Margin="10"
-               x:Name="theLabel" />
+        <Button Text="Delete"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,0"
+                Clicked="DeleteButton_Clicked"
+                BackgroundColor="Red"
+                TextColor="White" />
+
+        <Label Text="Something cool"
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               FontSize="20"
+               Margin="10"
+               x:Name="textLabel" />
     </Grid>
 </ContentPage>
