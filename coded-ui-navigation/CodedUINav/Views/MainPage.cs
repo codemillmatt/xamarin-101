@@ -2,13 +2,15 @@
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
-namespace CodedUIMvvm
+namespace CodedUINav
 {
-    public class MainPage: ContentPage
+    public class MainPage : ContentPage
     {
         public MainPage()
         {
             On<iOS>().SetUseSafeArea(true);
+
+            Title = "Notes";
 
             BindingContext = new MainPageViewModel();
 
@@ -39,9 +41,12 @@ namespace CodedUIMvvm
 
             var collectionView = new CollectionView
             {
-                ItemTemplate = new NotesTemplate()
+                ItemTemplate = new NotesTemplate(),
+                SelectionMode = SelectionMode.Single
             };
             collectionView.SetBinding(CollectionView.ItemsSourceProperty, nameof(MainPageViewModel.Notes));
+            collectionView.SetBinding(CollectionView.SelectedItemProperty, nameof(MainPageViewModel.SelectedNote));
+            collectionView.SetBinding(CollectionView.SelectionChangedCommandProperty, nameof(MainPageViewModel.NoteSelectedCommand));
 
             var grid = new Grid
             {
@@ -53,7 +58,7 @@ namespace CodedUIMvvm
                 RowDefinitions =
                 {
                     new RowDefinition{ Height = new GridLength(2.5, GridUnitType.Star) },
-                    new RowDefinition{ Height = new GridLength(1.0, GridUnitType.Star) },
+                    new RowDefinition{ Height = new GridLength(1, GridUnitType.Star) },
                     new RowDefinition{ Height = new GridLength(2.0, GridUnitType.Star) },
                 }
             };

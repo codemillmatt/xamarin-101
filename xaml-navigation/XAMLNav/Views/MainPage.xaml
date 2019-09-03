@@ -4,8 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:XAMLNav"
-             mc:Ignorable="d" x:Class="XAMLNav.MainPage"
-             Title="Enter Notes">
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             mc:Ignorable="d"
+             x:Class="XAMLNav.MainPage"
+             Title="Notes">
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
@@ -17,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2.5*"/>
-            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -44,7 +47,7 @@
                 <DataTemplate>
                     <StackLayout Padding="10,10">
                         <Frame>
-                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Text}" VerticalTextAlignment="Center"/>
                         </Frame>                                                
                     </StackLayout>
                 </DataTemplate>

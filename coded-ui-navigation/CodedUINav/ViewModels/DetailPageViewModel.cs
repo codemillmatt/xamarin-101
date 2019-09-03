@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace XAMLNav
+namespace CodedUINav
 {
     public class DetailPageViewModel : INotifyPropertyChanged
     {

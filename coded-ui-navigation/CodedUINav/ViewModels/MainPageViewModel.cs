@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 
-namespace XAMLNav
+namespace CodedUINav
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {

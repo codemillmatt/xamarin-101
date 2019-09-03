@@ -1,13 +1,11 @@
 ﻿using Xamarin.Forms;
 
-namespace XAMLNav
+namespace CodedUINav
 {
-    public partial class App : Application
+    public class App : Application
     {
         public App()
         {
-            InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
         }
     }

@@ -2,14 +2,15 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XAMLNav"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
     x:Class="XAMLNav.DetailPage"
     Title="Notes Detail">
     
     <ContentPage.Content>
         <StackLayout>
             <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                   Text="{Binding TheNote}" />
+                   Text="{Binding NoteText}" />
             <Button Text="Pop" VerticalOptions="FillAndExpand"
                     Command="{Binding ExitCommand}"/>
         </StackLayout>
