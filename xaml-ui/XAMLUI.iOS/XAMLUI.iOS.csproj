@@ -110,6 +110,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\xamagon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,5 +131,8 @@
       <Project>{723F73A5-2F0F-4021-B45D-4EEE1C1D4236}</Project>
       <Name>XAMLUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\xamagon.imageset\" />
   </ItemGroup>
 </Project>
