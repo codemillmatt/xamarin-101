@@ -17,7 +17,7 @@ namespace XamlMvvm
             },
             () => !string.IsNullOrEmpty(NoteText));
 
-            EraseNoteCommand = new Command(() => NoteText = string.Empty);
+            EraseNotesCommand = new Command(() => Notes.Clear());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -39,6 +39,6 @@ namespace XamlMvvm
         public ObservableCollection<NoteModel> Notes { get; }
 
         public Command SaveNoteCommand { get; }
-        public Command EraseNoteCommand { get; }
+        public Command EraseNotesCommand { get; }
     }
 }

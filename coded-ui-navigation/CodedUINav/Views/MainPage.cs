@@ -10,14 +10,22 @@ namespace CodedUINav
         {
             On<iOS>().SetUseSafeArea(true);
 
+            BackgroundColor = Color.PowderBlue;
+
             Title = "Notes";
 
             BindingContext = new MainPageViewModel();
 
+            var xamagonImage = new Image
+            {
+                Source = "xamagon.png"
+            };
+
             var noteEditor = new Editor
             {
                 Placeholder = "Enter Note",
-                Margin = new Thickness(10, 10)
+                Margin = new Thickness(10, 10),
+                BackgroundColor = Color.White
             };
             noteEditor.SetBinding(Editor.TextProperty, nameof(MainPageViewModel.NoteText));
 
@@ -37,7 +45,7 @@ namespace CodedUINav
                 BackgroundColor = Color.Red,
                 TextColor = Color.White
             };
-            deleteButton.SetBinding(Button.CommandProperty, nameof(MainPageViewModel.EraseNoteCommand));
+            deleteButton.SetBinding(Button.CommandProperty, nameof(MainPageViewModel.EraseNotesCommand));
 
             var collectionView = new CollectionView
             {
@@ -50,6 +58,8 @@ namespace CodedUINav
 
             var grid = new Grid
             {
+                Margin = new Thickness(0, 10, 0, 0),
+                
                 ColumnDefinitions =
                 {
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
@@ -57,19 +67,23 @@ namespace CodedUINav
                 },
                 RowDefinitions =
                 {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
                     new RowDefinition { Height = new GridLength(2.5, GridUnitType.Star) },
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
                     new RowDefinition { Height = new GridLength(2.0, GridUnitType.Star) },
                 }
             };
 
-            grid.Children.Add(noteEditor, 0, 0);
+            grid.Children.Add(xamagonImage, 0, 0);
+            Grid.SetColumnSpan(xamagonImage, 2);
+
+            grid.Children.Add(noteEditor, 0, 1);
             Grid.SetColumnSpan(noteEditor, 2);
 
-            grid.Children.Add(saveButton, 0, 1);
-            grid.Children.Add(deleteButton, 1, 1);
+            grid.Children.Add(saveButton, 0, 2);
+            grid.Children.Add(deleteButton, 1, 2);
 
-            grid.Children.Add(collectionView, 0, 2);
+            grid.Children.Add(collectionView, 0, 3);
             Grid.SetColumnSpan(collectionView, 2);
 
             Content = grid;

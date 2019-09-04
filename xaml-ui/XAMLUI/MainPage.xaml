@@ -7,7 +7,8 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     mc:Ignorable="d"
-    x:Class="XAMLUI.MainPage">
+    x:Class="XAMLUI.MainPage"
+    BackgroundColor="PowderBlue">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,20 +16,27 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="2.5*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <Editor Grid.Row="0"
+        <Image Source="xamagon"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"/>
+
+        <Editor Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Placeholder="Enter Note"
                 Margin="10,10"
-                x:Name="noteEditor" />
+                BackgroundColor="White"
+                x:Name="noteEditor"/>
 
         <Button Text="Save"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="0"
                 Margin="10,0"
                 Clicked="SaveButton_Clicked"
@@ -36,7 +44,7 @@
                 TextColor="White" />
 
         <Button Text="Delete"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="1"
                 Margin="10,0"
                 Clicked="DeleteButton_Clicked"
@@ -44,7 +52,7 @@
                 TextColor="White" />
 
         <Label Text="Something cool"
-               Grid.Row="2"
+               Grid.Row="3"
                Grid.Column="0"
                Grid.ColumnSpan="2"
                FontSize="20"

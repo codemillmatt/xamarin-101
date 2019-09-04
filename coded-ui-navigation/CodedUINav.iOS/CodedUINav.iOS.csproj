@@ -110,6 +110,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\xamagon.imageset\xamagon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,5 +131,8 @@
       <Project>{2A501BAA-4EA6-4D8B-AB35-6AE58EDC46A0}</Project>
       <Name>CodedUINav</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\xamagon.imageset\" />
   </ItemGroup>
 </Project>

@@ -17,7 +17,7 @@ namespace CodedUINav
             },
             () => !string.IsNullOrEmpty(NoteText));
 
-            EraseNoteCommand = new Command(() => NoteText = string.Empty);
+            EraseNotesCommand = new Command(() => Notes.Clear());
 
             NoteSelectedCommand = new Command(async () =>
             {
@@ -65,6 +65,6 @@ namespace CodedUINav
 
         public Command NoteSelectedCommand { get; }
         public Command SaveNoteCommand { get; }
-        public Command EraseNoteCommand { get; }
+        public Command EraseNotesCommand { get; }
     }
 }

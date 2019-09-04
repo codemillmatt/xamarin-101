@@ -17,7 +17,7 @@ namespace CodedUIMvvm
             },
             () => !string.IsNullOrEmpty(NoteText));
 
-            EraseNoteCommand = new Command(() => NoteText = string.Empty);
+            EraseNotesCommand = new Command(() => Notes.Clear());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -29,8 +29,7 @@ namespace CodedUIMvvm
             set
             {
                 noteText = value;
-                PropertyChanged?.Invoke(this,
-                    new PropertyChangedEventArgs(nameof(NoteText)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NoteText)));
 
                 SaveNoteCommand.ChangeCanExecute();
             }
@@ -39,6 +38,6 @@ namespace CodedUIMvvm
         public ObservableCollection<NoteModel> Notes { get; }
 
         public Command SaveNoteCommand { get; }
-        public Command EraseNoteCommand { get; }
+        public Command EraseNotesCommand { get; }
     }
 }
