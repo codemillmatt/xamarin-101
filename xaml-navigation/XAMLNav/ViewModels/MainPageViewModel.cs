@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Xamarin.Forms;
 
@@ -9,28 +8,28 @@ namespace XAMLNav
     {
         public MainPageViewModel()
         {
-            Notes = new ObservableCollection<string>();
+            Notes = new ObservableCollection<NoteModel>();
 
-            SaveNoteCommand = new Command(() => {
-                Notes.Add(NoteText);
-                NoteText = string.Empty;
-            }, () => {
-                return !string.IsNullOrEmpty(NoteText);
-            });
-
-            EraseNoteCommand = new Command(() => NoteText = string.Empty);
-
-            NoteSelectedCommand = new Command(async() =>
+            SaveNoteCommand = new Command(() =>
             {
-                if (SelectedNote == null)
+                Notes.Add(new NoteModel { Text = NoteText });
+                NoteText = string.Empty;
+            },
+            () => !string.IsNullOrEmpty(NoteText));
+
+            EraseNotesCommand = new Command(() => Notes.Clear());
+
+            NoteSelectedCommand = new Command(async () =>
+            {
+                if (SelectedNote is null)
                     return;
 
-                var detailVm = new DetailPageViewModel();
-                detailVm.TheNote = SelectedNote;
+                var detailViewModel = new DetailPageViewModel
+                {
+                    NoteText = SelectedNote.Text
+                };
 
-                await Application.Current.MainPage.Navigation.PushAsync(
-                    new DetailPage(detailVm)
-                );
+                await Application.Current.MainPage.Navigation.PushAsync(new DetailPage(detailViewModel));
 
                 SelectedNote = null;
             });
@@ -45,30 +44,27 @@ namespace XAMLNav
             set
             {
                 noteText = value;
-                PropertyChanged?.Invoke(this,
-                    new PropertyChangedEventArgs(nameof(NoteText)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NoteText)));
 
                 SaveNoteCommand.ChangeCanExecute();
             }
         }
 
-        string selectedNote;
-        public string SelectedNote
+        NoteModel selectedNote;
+        public NoteModel SelectedNote
         {
             get => selectedNote;
             set
             {
                 selectedNote = value;
-                PropertyChanged?.Invoke(this,
-                    new PropertyChangedEventArgs(nameof(SelectedNote)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedNote)));
             }
         }
 
-        public Command NoteSelectedCommand { get; }
+        public ObservableCollection<NoteModel> Notes { get; }
 
-        public ObservableCollection<string> Notes { get; set; }
-        
+        public Command NoteSelectedCommand { get; }
         public Command SaveNoteCommand { get; }
-        public Command EraseNoteCommand { get; }
+        public Command EraseNotesCommand { get; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,22 +8,19 @@ namespace XAMLNav
     {
         public DetailPageViewModel()
         {
-            ExitCommand = new Command(async () =>
-                await Application.Current.MainPage.Navigation.PopAsync()
-            );
+            ExitCommand = new Command(async () => await Application.Current.MainPage.Navigation.PopAsync());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        string theNote;
-        public string TheNote
+        string noteText;
+        public string NoteText
         {
-            get => theNote;
+            get => noteText;
             set
             {
-                theNote = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(
-                    nameof(TheNote)));
+                noteText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NoteText)));
             }
         }
 

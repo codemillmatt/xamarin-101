@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XAMLUI
@@ -20,16 +16,17 @@ namespace XAMLUI
 
         protected void SaveButton_Clicked(object sender, EventArgs e)
         {
-            var note = theEditor.Text;
+            var noteText = noteEditor.Text;
 
-            theEditor.Text = string.Empty;
+            noteEditor.Text = string.Empty;
 
-            theLabel.Text = note;
+            textLabel.Text = noteText;
         }
 
         protected void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            theEditor.Text = theLabel.Text = string.Empty;
+            noteEditor.Text = string.Empty;
+            textLabel.Text = string.Empty;
         }
     }
 }

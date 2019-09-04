@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace XamlMvvm
@@ -10,16 +8,16 @@ namespace XamlMvvm
     {
         public MainPageViewModel()
         {
-            Notes = new ObservableCollection<string>();
+            Notes = new ObservableCollection<NoteModel>();
 
-            SaveNoteCommand = new Command(() => {
-                Notes.Add(NoteText);
+            SaveNoteCommand = new Command(() =>
+            {
+                Notes.Add(new NoteModel { Text = NoteText });
                 NoteText = string.Empty;
-            }, () => {
-                return !string.IsNullOrEmpty(NoteText);
-            });
+            },
+            () => !string.IsNullOrEmpty(NoteText));
 
-            EraseNoteCommand = new Command(() => NoteText = string.Empty);
+            EraseNotesCommand = new Command(() => Notes.Clear());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -29,7 +27,7 @@ namespace XamlMvvm
         {
             get => noteText;
             set
-            {                
+            {
                 noteText = value;
                 PropertyChanged?.Invoke(this,
                     new PropertyChangedEventArgs(nameof(NoteText)));
@@ -38,9 +36,9 @@ namespace XamlMvvm
             }
         }
 
-        public ObservableCollection<string> Notes { get; set; }
-        
+        public ObservableCollection<NoteModel> Notes { get; }
+
         public Command SaveNoteCommand { get; }
-        public Command EraseNoteCommand { get; }
+        public Command EraseNotesCommand { get; }
     }
 }
