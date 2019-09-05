@@ -1,6 +1,4 @@
 ﻿using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace CodedUIMvvm
 {
@@ -8,8 +6,6 @@ namespace CodedUIMvvm
     {
         public MainPage()
         {
-            On<iOS>().SetUseSafeArea(true);
-
             BackgroundColor = Color.PowderBlue;
 
             BindingContext = new MainPageViewModel();
@@ -53,6 +49,8 @@ namespace CodedUIMvvm
 
             var grid = new Grid
             {
+                Margin = new Thickness(20, 40),
+                
                 ColumnDefinitions =
                 {
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },

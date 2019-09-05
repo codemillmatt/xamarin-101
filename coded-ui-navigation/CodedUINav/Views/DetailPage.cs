@@ -1,6 +1,4 @@
 ﻿using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace CodedUINav
 {
@@ -8,8 +6,6 @@ namespace CodedUINav
     {
         public DetailPage(DetailPageViewModel viewModel)
         {
-            On<iOS>().SetUseSafeArea(true);
-
             BindingContext = viewModel;
 
             Title = "Notes Detail";
@@ -34,7 +30,10 @@ namespace CodedUINav
             };
             exitButton.SetBinding(Button.CommandProperty, nameof(DetailPageViewModel.ExitCommand));
 
-            var stackLayout = new StackLayout();
+            var stackLayout = new StackLayout
+            {
+                Margin = new Thickness(20, 40)
+            };
             stackLayout.Children.Add(textLabel);
             stackLayout.Children.Add(exitButton);
 
