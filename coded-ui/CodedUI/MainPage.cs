@@ -5,6 +5,9 @@ namespace CodedUI
 {
     public class MainPage : ContentPage
     {
+        readonly Label textLabel;
+        readonly Editor noteEditor;
+
         public MainPage()
         {
             BackgroundColor = Color.PowderBlue;
@@ -14,10 +17,10 @@ namespace CodedUI
                 Source = "xamagon"
             };
 
-            var noteEditor = new Editor
+            noteEditor = new Editor
             {
                 Placeholder = "Enter Note",
-                BackgroundColor = Color.White
+                BackgroundColor = Color.White,
                 Margin = new Thickness(10)
             };
 
@@ -28,6 +31,7 @@ namespace CodedUI
                 BackgroundColor = Color.Green,
                 Margin = new Thickness(10)
             };
+            saveButton.Clicked += SaveButton_Clicked;
 
             var deleteButton = new Button
             {
@@ -36,8 +40,9 @@ namespace CodedUI
                 BackgroundColor = Color.Red,
                 Margin = new Thickness(10)
             };
+            deleteButton.Clicked += DeleteButton_Clicked;
 
-            var textLabel = new Label
+            textLabel = new Label
             {
                 FontSize = 20,
                 Margin = new Thickness(10)
@@ -74,6 +79,17 @@ namespace CodedUI
             Grid.SetColumnSpan(textLabel, 2);
 
             Content = grid;
+        }
+
+        private void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            textLabel.Text = "";
+            noteEditor.Text = "";
+        }
+
+        private void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            textLabel.Text = noteEditor.Text;
         }
     }
 }
