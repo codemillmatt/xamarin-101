@@ -5,9 +5,6 @@ namespace CodedUI
 {
     public class MainPage : ContentPage
     {
-        readonly Editor noteEditor;
-        readonly Label textLabel;
-
         public MainPage()
         {
             BackgroundColor = Color.PowderBlue;
@@ -17,32 +14,30 @@ namespace CodedUI
                 Source = "xamagon"
             };
 
-            noteEditor = new Editor
+            var noteEditor = new Editor
             {
                 Placeholder = "Enter Note",
-                Margin = new Thickness(10, 10),
                 BackgroundColor = Color.White
+                Margin = new Thickness(10)
             };
 
             var saveButton = new Button
             {
                 Text = "Save",
-                Margin = new Thickness(10, 10),
+                TextColor = Color.White,
                 BackgroundColor = Color.Green,
-                TextColor = Color.White
+                Margin = new Thickness(10)
             };
-            saveButton.Clicked += SaveButton_Clicked;
 
             var deleteButton = new Button
             {
                 Text = "Delete",
-                Margin = new Thickness(10, 10),
+                TextColor = Color.White,
                 BackgroundColor = Color.Red,
-                TextColor = Color.White
+                Margin = new Thickness(10)
             };
-            deleteButton.Clicked += DeleteButton_Clicked;
 
-            textLabel = new Label
+            var textLabel = new Label
             {
                 FontSize = 20,
                 Margin = new Thickness(10)
@@ -79,21 +74,6 @@ namespace CodedUI
             Grid.SetColumnSpan(textLabel, 2);
 
             Content = grid;
-        }
-
-        private void SaveButton_Clicked(object sender, EventArgs e)
-        {
-            var noteText = noteEditor.Text;
-
-            noteEditor.Text = string.Empty;
-
-            textLabel.Text = noteText;
-        }
-
-        private void DeleteButton_Clicked(object sender, EventArgs e)
-        {
-            noteEditor.Text = string.Empty;
-            textLabel.Text = string.Empty;
         }
     }
 }

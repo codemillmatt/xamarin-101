@@ -20,26 +20,26 @@ namespace CodedUINav
             var noteEditor = new Editor
             {
                 Placeholder = "Enter Note",
-                Margin = new Thickness(10, 10),
-                BackgroundColor = Color.White
+                BackgroundColor = Color.White,
+                Margin = new Thickness(10)
             };
             noteEditor.SetBinding(Editor.TextProperty, nameof(MainPageViewModel.NoteText));
 
             var saveButton = new Button
             {
                 Text = "Save",
-                Margin = new Thickness(10, 10),
+                TextColor = Color.White,
                 BackgroundColor = Color.Green,
-                TextColor = Color.White
+                Margin = new Thickness(10)
             };
             saveButton.SetBinding(Button.CommandProperty, nameof(MainPageViewModel.SaveNoteCommand));
 
             var deleteButton = new Button
             {
                 Text = "Delete",
-                Margin = new Thickness(10, 10),
+                TextColor = Color.White,
                 BackgroundColor = Color.Red,
-                TextColor = Color.White
+                Margin = new Thickness(10)
             };
             deleteButton.SetBinding(Button.CommandProperty, nameof(MainPageViewModel.EraseNotesCommand));
 
