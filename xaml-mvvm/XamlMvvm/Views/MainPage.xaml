@@ -5,8 +5,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XamlMvvm"
-    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    ios:Page.UseSafeArea="true"
     mc:Ignorable="d"
     BackgroundColor="PowderBlue"
     x:Class="XamlMvvm.MainPage">
@@ -15,7 +13,7 @@
         <local:MainPageViewModel />
     </ContentPage.BindingContext>
 
-    <Grid>
+    <Grid Margin="20,40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />

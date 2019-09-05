@@ -1,7 +1,5 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace CodedUI
 {
@@ -12,8 +10,6 @@ namespace CodedUI
 
         public MainPage()
         {
-            On<iOS>().SetUseSafeArea(true);
-
             BackgroundColor = Color.PowderBlue;
 
             var xamagonImage = new Image
@@ -54,6 +50,8 @@ namespace CodedUI
 
             var grid = new Grid
             {
+                Margin = new Thickness(20, 40),
+
                 ColumnDefinitions =
                 {
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },

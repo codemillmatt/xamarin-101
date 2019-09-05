@@ -1,6 +1,4 @@
 ﻿using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace CodedUINav
 {
@@ -8,8 +6,6 @@ namespace CodedUINav
     {
         public MainPage()
         {
-            On<iOS>().SetUseSafeArea(true);
-
             BackgroundColor = Color.PowderBlue;
 
             Title = "Notes";
@@ -58,7 +54,7 @@ namespace CodedUINav
 
             var grid = new Grid
             {
-                Margin = new Thickness(0, 10, 0, 0),
+                Margin = new Thickness(20, 40),
                 
                 ColumnDefinitions =
                 {

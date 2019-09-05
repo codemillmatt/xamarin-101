@@ -4,13 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    ios:Page.UseSafeArea="true"
     mc:Ignorable="d"
     x:Class="XAMLUI.MainPage"
     BackgroundColor="PowderBlue">
 
-    <Grid>
+    <Grid Margin="20,40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -51,8 +49,7 @@
                 BackgroundColor="Red"
                 TextColor="White" />
 
-        <Label Text="Something cool"
-               Grid.Row="3"
+        <Label Grid.Row="3"
                Grid.Column="0"
                Grid.ColumnSpan="2"
                FontSize="20"
