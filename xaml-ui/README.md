@@ -2,7 +2,7 @@
 
 The most popular way of building a user interface for Xamarin.Forms is with XAML. Or Extensible Application Markup Language. It's kinda like HTML, but it does more.
 
-<iframe src="https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-UI-with-XAML-5-of-11/player?WT.mc_id=xamarin101-github-masoucou" width="640" height="360" allowFullScreen frameBorder="0" title="Xamarin.Forms UI with XAML [5 of 11] - Microsoft Channel 9 Video"></iframe>
+[Check out the episode](https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-UI-with-XAML-5-of-11?WT.mc_id=xamarin101-github-masoucou), then hop on back for some more details.
 
 ## Building up the UI
 
