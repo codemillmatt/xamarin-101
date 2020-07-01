@@ -19,6 +19,12 @@ Then in the `MainPage.xaml` there were some changes to the `CollectionView`. Nam
 
 So now you can [checkout the video](https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-Navigation-with-XAML-7-of-11?WT.mc_id=xamarin101-github-masoucou) for more info.
 
+### One More Thing!
+
+You'll also notice one more thing within the `DetailPage` ... and that's an additional way to setup the `BindingContext` of a XAML page to its view model.
+
+The code is located in the code-behind. Instead of doing everything in the XAML - it's done with `BindingContext` in C#. In the case of `DetailPage` the view model is passed into the constructor, but there are many times when you'd create the view model in the page itself, and this is a perfectly valid way of setting it up instead of using `<ContentPage.BindingContext>` in XAML.
+
 ## Take Aways
 
 So the big takeaway here is the concept of pushing and popping.
