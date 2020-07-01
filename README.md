@@ -17,5 +17,5 @@ This repo will cover XAML, as that's the most popular way of building Xamarin.Fo
 ## The Episodes
 
 - [Building Up Xamarin.Forms UIs with XAML](xaml-ui)
-- [Xamarin.Forms MVVM with XAML](xaml-mvvm/README.md)
-- [Navigation in Xamarin.Forms with XAML](xaml-navigation/README.md)
+- [Xamarin.Forms MVVM with XAML](xaml-mvvm)
+- [Navigation in Xamarin.Forms with XAML](xaml-navigation)
