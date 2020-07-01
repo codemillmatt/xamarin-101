@@ -20,7 +20,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="2.5*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height=".5*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
@@ -65,7 +65,7 @@
                 <DataTemplate>
                     <StackLayout Padding="10,10">
                         <Frame>
-                            <Label Text="{Binding Text}"
+                            <Label Text="{Binding Text}" FontSize="Title"
                                    VerticalTextAlignment="Center" />
                         </Frame>
                     </StackLayout>
